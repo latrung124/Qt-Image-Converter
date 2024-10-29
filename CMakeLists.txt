@@ -12,9 +12,31 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Gui)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui)
 
-add_executable(tool-create-bmp-image
-  main.cpp
+set(HEADERS
+        BMPInfo.h
+        ImageProvider/ImageProvider.h
+        ImagePainter/ImagePainter.h
+        utils/Material.h
 )
+
+set(SOURCES
+        ImageProvider/ImageProvider.cpp
+        ImagePainter/ImagePainter.cpp
+        main.cpp
+)
+
+set(DRAFT_SOURCE
+        Draft/Example.cpp
+)
+
+add_executable(tool-create-bmp-image
+  ${HEADERS}
+  ${SOURCES}
+  ${DRAFT_SOURCE}
+)
+
+target_include_directories(tool-create-bmp-image PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
 target_link_libraries(tool-create-bmp-image Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui)
 
 include(GNUInstallDirs)
