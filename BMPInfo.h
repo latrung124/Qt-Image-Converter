@@ -24,7 +24,7 @@ struct BMPHeader {
  * that are produced by emitting light.
  */
 struct DIBHeader {
-    uint32_t size{40};             ///< Size of the DIB header (usually 40 bytes).
+    uint32_t size{56};             ///< Size of the DIB header (usually 40 bytes).
     int32_t width;                 ///< Image width in pixels.
     int32_t height;                ///< Image height in pixels (negative for top-down).
     uint16_t planes{1};            ///< Number of color planes, always set to 1.

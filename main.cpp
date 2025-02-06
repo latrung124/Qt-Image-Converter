@@ -13,7 +13,7 @@ void generate() {
     painter.paintImageWithText(image, text);
 
     ImageProvider provider;
-    provider.createRGB565BMPImage(image);
+    provider.createRGB565BMPImage(testImage);
 }
 
 int main(int argc, char *argv[])

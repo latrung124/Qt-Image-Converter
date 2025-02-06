@@ -24,4 +24,6 @@ public:
      * @param image The source QImage to convert.
      */
     void createRGB565BMPImage(const QImage& image);
+    void debugQImageInfo(const QImage &image);
+    QString imageFormatToString(QImage::Format format);
 };
